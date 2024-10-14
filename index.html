@@ -3,120 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Carousel</title>
+    <title>Three Slide Carousel</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Custom styles for carousel content */
-        .carousel-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 0;
-        }
 
-        .profile-img {
-            border-radius: 50%;
-            max-width: 150px;
-            height: 150px;
-            object-fit: cover;
+    <style>
+	
+	body{
+  padding: 25px;
+}
+.title {
+	color: #5C6AC4;
+}
+        .carousel-item {
+            min-height: 400px;
         }
 
         .carousel-content {
-            margin-left: 40px;
-            max-width: 600px; /* Prevent text from spreading too wide */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .carousel-content h3 {
+        .carousel-text {
+            max-width: 50%;
+        }
+
+        .carousel-text h2 {
+            font-size: 2rem;
             font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase; /* Capitalize the header */
         }
 
-        .carousel-content p {
-            margin: 15px 0;
+        .carousel-text p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .carousel-text a {
+            text-transform: uppercase;
+        }
+
+        .carousel-image img {
+            width: 300px; /* Set image width */
+            height: 300px; /* Set image height */
+            border-radius: 50%; /* Make the image circular */
+            border: 2px solid #ddd; /* Optional: add a border to the image */
+        }
+
+        /* Introduction Section Styles */
+        .intro-section {
+            background-color: #f8f9fa; /* Slight background color */
+            padding: 20px; /* Padding around the paragraph */
+            border-radius: 8px; /* Rounded corners */
+            text-align: center; /* Center text */
+            margin-bottom: 30px; /* Space below the intro */
         }
 
         /* Custom styles for carousel controls */
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            background-color: black;
-            border-radius: 50%;
+            background-color: black; /* Black background for chevrons */
+            border-radius: 50%; /* Rounded icons */
         }
 
-        .carousel-indicators {
-            margin-top: 20px;
-        }
-
-        /* Ensure text and image do not overlap on small screens */
         @media (max-width: 768px) {
-            .carousel-item {
-                flex-direction: column; /* Stack image and text vertically */
-            }
-
             .carousel-content {
-                margin-left: 0;
-                margin-top: 20px; /* Add space between image and text */
-                text-align: center;
+                flex-direction: column;
             }
 
-            .profile-img {
-                margin-bottom: 20px; /* Add space below the image */
+            .carousel-text {
+                max-width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .carousel-image {
+                max-width: 100%;
             }
         }
     </style>
+	<script>
+	function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+	
+	</script>
 </head>
 <body>
 
-    <!-- Profile Carousel -->
-    <div id="profileCarousel" class="carousel slide" data-bs-ride="carousel">
-        <!-- Carousel Indicators (dots) -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="container mt-5">
+        <!-- Introduction Section -->
+        <div class="intro-section">
+            <h1>Welcome to Somalicash CONSORTIUM</h1>
+            <p>
+                The Somalicash Consortium is committed to providing reliable cash transfer solutions to communities in need. Our goal is to empower individuals and families through sustainable support, ensuring a brighter future for all.
+            </p>
         </div>
+    </div>
 
+    <!-- Carousel -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <!-- First Slide -->
+            <!-- Slide 1 -->
             <div class="carousel-item active">
-                <div class="container d-flex align-items-center">
-                    <img src="https://via.placeholder.com/150" class="profile-img" alt="John Jackson">
-                    <div class="carousel-content">
-                        <h3>John Jackson, <em>developer</em></h3>
-                        <p>There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.</p>
-                        <a href="#" class="btn btn-dark">Read More</a>
+                <div class="container carousel-content">
+                    <div class="carousel-text">
+                        <h2>First Slide Header</h2>
+                        <p>This is the description for the first slide. Add your content here, and make sure it is engaging and informative.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="https://via.placeholder.com/300" alt="First slide image">
                     </div>
                 </div>
             </div>
-            <!-- Second Slide -->
+            <!-- Slide 2 -->
             <div class="carousel-item">
-                <div class="container d-flex align-items-center">
-                    <img src="https://via.placeholder.com/150" class="profile-img" alt="Jane Doe">
-                    <div class="carousel-content">
-                        <h3>Jane Doe, <em>designer</em></h3>
-                        <p>Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.</p>
-                        <a href="#" class="btn btn-dark">Read More</a>
+                <div class="container carousel-content">
+                    <div class="carousel-text">
+                        <h2>Second Slide Header</h2>
+                        <p>This is the description for the second slide. Add more details or information that supports your message.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="https://via.placeholder.com/300" alt="Second slide image">
                     </div>
                 </div>
             </div>
-            <!-- Third Slide -->
+            <!-- Slide 3 -->
             <div class="carousel-item">
-                <div class="container d-flex align-items-center">
-                    <img src="https://via.placeholder.com/150" class="profile-img" alt="Sam Smith">
-                    <div class="carousel-content">
-                        <h3>Sam Smith, <em>project manager</em></h3>
-                        <p>It’s not about ideas. It’s about making ideas happen. The future belongs to those who believe in the beauty of their dreams.</p>
-                        <a href="#" class="btn btn-dark">Read More</a>
+                <div class="container carousel-content">
+                    <div class="carousel-text">
+                        <h2>Third Slide Header</h2>
+                        <p>Here's the description for the third slide. Continue building interest with this final piece of information.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="https://via.placeholder.com/300" alt="Third slide image">
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#profileCarousel" data-bs-slide="prev">
+        
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#profileCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
