@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Carousel</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for carousel content */
+        .carousel-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            max-width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .carousel-content {
+            margin-left: 40px;
+            max-width: 600px; /* Prevent text from spreading too wide */
+        }
+
+        .carousel-content h3 {
+            font-weight: bold;
+        }
+
+        .carousel-content p {
+            margin: 15px 0;
+        }
+
+        /* Custom styles for carousel controls */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: black;
+            border-radius: 50%;
+        }
+
+        .carousel-indicators {
+            margin-top: 20px;
+        }
+
+        /* Ensure text and image do not overlap on small screens */
+        @media (max-width: 768px) {
+            .carousel-item {
+                flex-direction: column; /* Stack image and text vertically */
+            }
+
+            .carousel-content {
+                margin-left: 0;
+                margin-top: 20px; /* Add space between image and text */
+                text-align: center;
+            }
+
+            .profile-img {
+                margin-bottom: 20px; /* Add space below the image */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Profile Carousel -->
+    <div id="profileCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carousel Indicators (dots) -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#profileCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <!-- First Slide -->
+            <div class="carousel-item active">
+                <div class="container d-flex align-items-center">
+                    <img src="https://via.placeholder.com/150" class="profile-img" alt="John Jackson">
+                    <div class="carousel-content">
+                        <h3>John Jackson, <em>developer</em></h3>
+                        <p>There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.</p>
+                        <a href="#" class="btn btn-dark">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Slide -->
+            <div class="carousel-item">
+                <div class="container d-flex align-items-center">
+                    <img src="https://via.placeholder.com/150" class="profile-img" alt="Jane Doe">
+                    <div class="carousel-content">
+                        <h3>Jane Doe, <em>designer</em></h3>
+                        <p>Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.</p>
+                        <a href="#" class="btn btn-dark">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Third Slide -->
+            <div class="carousel-item">
+                <div class="container d-flex align-items-center">
+                    <img src="https://via.placeholder.com/150" class="profile-img" alt="Sam Smith">
+                    <div class="carousel-content">
+                        <h3>Sam Smith, <em>project manager</em></h3>
+                        <p>It’s not about ideas. It’s about making ideas happen. The future belongs to those who believe in the beauty of their dreams.</p>
+                        <a href="#" class="btn btn-dark">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#profileCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#profileCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
